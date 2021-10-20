@@ -1,0 +1,74 @@
+SELECT DESCRICAO, VALORALUG, ALUGADO
+FROM IMOVEL
+WHERE VALORALUG <= '2000.00'
+
+Edit	SELECT* FROM IMOVEL
+Edit	SELECT * FROM ALUGUEL
+
+Edit	INSERT INTO CORRPROP VALUES(13,12)
+Edit	INSERT INTO CORRINQU VALUES(13,14)
+
+INSERT INTO CORRINQU VALUES(13,12)
+Edit	INSERT INTO ALUGUEL VALUES(12, 15, 14, 12, '2021-09-05', '2022-09-05', 900.00)
+Edit	select * from ALUGUEL
+Edit	INSERT INTO ALUGUEL VALUES(11, 11, 13, 11, '2021-10-05', '2022-10-05', 1900.00)
+
+
+INSERT INTO INQUILINO VALUES(15, 'Inquilino 15', '15.15.15-15')
+Edit	INSERT INTO INQUILINO VALUES(14, 'Inquilino 14', '14.14.14-14')
+Edit	INSERT INTO INQUILINO VALUES(13, 'Inquilino 13', '13.13.13-13')
+Edit	INSERT INTO INQUILINO VALUES(12, 'Inquilino 12', '12.12.12-12')
+Edit	INSERT INTO INQUILINO VALUES(11, 'Inquilino 11', '111.111.111-11')
+
+INSERT INTO IMOVEL VALUES(15, 'Apartamento 15', 13, 4500.00, false)
+Edit	INSERT INTO IMOVEL VALUES(14, 'Casa 14', 13, 1000.00, true)
+Edit	INSERT INTO IMOVEL VALUES(13, 'Casa 13', 12, 2000.00, true)
+Edit	INSERT INTO IMOVEL VALUES(12, 'Apartamento 12', 11, 3000.00, false)
+Edit	INSERT INTO IMOVEL VALUES(11, 'Apartamento 11', 11, 1500.00, false)
+Edit	INSERT INTO PROPRIETARIO VALUES(13, 'Proprietario 13', '1313-1313')
+Edit	INSERT INTO PROPRIETARIO VALUES(12, 'Proprietario 12', '1212-1212')
+Edit	INSERT INTO PROPRIETARIO VALUES(11, 'Proprietario 11', '1111-1111')
+Edit	INSERT INTO CORRETOR VALUES(13, 'Corretor 13', 'Licenca 13', '1313-1313')
+Edit	INSERT INTO CORRETOR VALUES(12, 'Corretor 12', 'Licenca 12', '1212-1212')
+Edit	INSERT INTO CORRETOR VALUES(11, 'Corretor 11', 'Licenca 11', '11111-1111')
+
+CREATE TABLE CORRINQU(
+  codCorr int references CORRETOR,
+  codInq int references INQUILINO
+)
+Edit	CREATE TABLE CORRPROP(
+  codCorr int references CORRETOR,
+  codProp int references PROPRIETARIO
+)
+Edit	CREATE TABLE ALUGUEL(
+  CodAlu int PRIMARY KEY,
+  codInq int references INQUILINO,
+  codImovel int references IMOVEL,
+  codCorr int references CORRETOR,
+  dataAlug date,
+  dataVenc date,
+  valorAluguel real
+)
+Edit	CREATE TABLE INQUILINO(
+  CodInq int PRIMARY KEY,
+  nome varchar(35),
+  CPF varchar(20)
+)
+Edit	CREATE TABLE IMOVEL(
+  CodImovel int PRIMARY KEY,
+  descricao varchar(100),
+  codProp int references PROPRIETARIO,
+  valorAlug real,
+  alugado boolean
+)
+Edit	CREATE TABLE PROPRIETARIO(
+  CodProp int PRIMARY KEY,
+  nome varchar(35),
+  tel varchar(50)
+)
+Edit	CREATE TABLE CORRETOR (
+  CodCorr int PRIMARY KEY,
+  nome varchar(35),
+  licenca varchar(35),
+  tel varchar(50)
+)

@@ -1,0 +1,4 @@
+INSERT INTO USUARIO  VALUES('FT001', 'Trocar@123', 'Ivan J. Borchardt', '003.345.654-12', 'Instrutor');
+INSERT INTO USUARIO  VALUES('FT002', 'Trocar@123', 'Joao Alberto', '003.345.654-13', 'Aluno');
+INSERT INTO USUARIO  VALUES('FT003', 'Trocar@123', 'Joana Silveira', '003.345.654-14', 'Aluno');
+INSERT INTO USUARIO  VALUES('FT004', 'Trocar@123', 'Santos Dumont', '003.345.654-15', 'Aluno');
